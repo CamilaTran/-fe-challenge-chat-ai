@@ -28,6 +28,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        <div className="credits" data-gfe-screenshot-exclude="true">
+          A challenge by {" "}
+          <a href="https://www.greatfrontend.com/projects?ref=challenges" target="_blank">GreatFrontEnd Projects</a>. Built by
+          <a href="https://www.greatfrontend.com/projects/u/username" target="_blank">{" "}Coolkid!playcode</a>.
+        </div>
       </body>
     </html>
   );
