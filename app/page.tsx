@@ -1,9 +1,22 @@
+import ChatContent from "@/app/components/chat-content";
+import Navigation from "@/app/components/navigation";
+import Sidebar from "@/app/components/sidebar";
 
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-     
+    <div className="">
+      <div className="block lg:hidden">
+        <Navigation />
+      </div>
+      <div className="flex">
+        <div className="lg:block hidden">
+          <Sidebar />
+        </div>
+        <div className="lg:w-[calc(100vw-240px-64px-64px)] mx-auto">
+          <ChatContent />
+        </div>
+      </div>
     </div>
   );
 }
