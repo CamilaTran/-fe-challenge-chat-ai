@@ -1,0 +1,32 @@
+.ant-collapse {
+  border: none !important;
+  background: white !important;
+  box-shadow: none !important;
+
+  .ant-collapse-item {
+    &:first-child {
+      .ant-collapse-header {
+        padding-block-start: 0px !important;
+      }
+    }
+
+    .ant-collapse-header {
+      padding: 24px 0;
+      border-radius: 0 !important;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+
+      span {
+        color: #171717 !important;
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      .ant-collapse-expand-icon {
+        padding: 0 !important;
+      }
+    }
+  }
+}

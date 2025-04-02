@@ -1,0 +1,23 @@
+.ant-modal-mask {
+  background-color: rgba(10, 10, 10, 0.7) !important;
+}
+
+.ant-modal {
+  padding: 0;
+  width: fit-content !important;
+  border-radius: 0.5rem;
+
+  .ant-modal-content {
+    padding: 1.5rem;
+  }
+
+  .ant-modal-title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .ant-modal-header {
+    margin-bottom: 0.5rem !important;
+  }
+}
