@@ -2,10 +2,15 @@
 import Button from "../buttons"
 import Modal from "../modal/client-modal"
 
-const LeaveConfirmModal = () => {
+interface LeaveConfirmModalProps {
+    open: boolean;
+    onClose: () => void
+}
+
+const LeaveConfirmModal = (props: LeaveConfirmModalProps) => {
     return (
         <Modal
-            open={false}
+            {...props}
             title="Save your chat history?"
             className="!md:w-[343px] w-full"
             footer={
