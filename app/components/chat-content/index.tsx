@@ -1,36 +1,39 @@
 "use client"
-// icon 
-import MailIcon from "@/app/ui/icon/mail-icon";
-import QuickstartPrompt from "../quickstart-prompt";
-import PenIcon from "@/app/ui/icon/pen-icon";
-import NotebookIcon from "@/app/ui/icon/notebook-icon";
-import ChatIcon from "@/app/ui/icon/chat-icon";
 
+import { useState } from "react";
+import EmptyChatContent from "../empty-chat-content";
 // components
 import SearchInput from "../input/search-input";
+import ChatCompletion from "../chat-completion";
+import Loading from "../loading";
 
 
 const ChatContent = () => {
+    const [isLogin] = useState(true)
+    const [isLoading] = useState(true)
     return (
-        <div className="lg:px-16 lg:pt-20 pb-6 md:px-18 pt-12 px-4 lg:h-screen flex flex-col justify-between">
-            <div className="lg:max-w-[712px] mx-auto flex flex-col justify-between h-screen">
-                <div>
-                    <div>
-                        <span className="sm:text-3xl text-xl font-medium font-lg">Hey, I’m Chat AI. </span>
-                        <span className="sm:text-3xl text-xl text-neutral-600">Your AI assistant and <br /> companion for any occasion.</span>
-                    </div>
-                    <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 pt-20">
-                        <QuickstartPrompt tittle="Draft email" description="Generate email for any occasion you need." onClick={() => { }} icon={<MailIcon />} background="bg-indigo-50" />
-                        <QuickstartPrompt tittle="Write an Essay" description="Generate essay for any occasion you need." onClick={() => { }} icon={<PenIcon />} background="bg-green-50" />
-                        <QuickstartPrompt tittle="Planning" description="Plan for any occasion, from holiday to family." onClick={() => { }} icon={<NotebookIcon />} background="bg-fuchsia-50" />
-                        <QuickstartPrompt tittle="Assistant" description="Become your personal assistant. Helping you." onClick={() => { }} icon={<ChatIcon />} background="bg-amber-50" />
-                    </div>
-                </div>
-
-                <SearchInput />
-
+        <div className="relative lg:max-w-[712px] mx-auto flex flex-col justify-between lg:h-screen lg:px-16 lg:pt-20 pb-6 md:px-8 pt-12 px-4">
+            <div className="lg:max-h-[calc(100vh-90px-24px)] overflow-scroll">
+                {isLogin ? <ChatCompletion /> : <EmptyChatContent />}
             </div>
+            <SearchInput />
+            {isLoading && <Loading />}
         </div>
+        // <div className="lg:px-16 lg:pt-20 pb-6 md:px-18 pt-12 px-4 lg:h-screen flex flex-col justify-between">
+        //     <div className="lg:max-w-[712px]">
+        //         {isLogin ? <ChatCompletion /> : <EmptyChatContent />}
+        //         <SearchInput />
+        //     </div>
+
+        // </div>
+        // <div className="lg:px-16 lg:pt-20 pb-6 md:px-18 pt-12 px-4 lg:h-screen flex flex-col justify-between">
+        //     <div className="relative lg:max-w-[712px] flex flex-col justify-between h-screen w-auto">
+        //         {/* {isLogin ? <ChatCompletion /> : <EmptyChatContent />} */}
+
+        //         <SearchInput />
+        //         {/* {isLoading && <Loading />} */}
+        //     </div>
+        // </div>
     )
 }
 

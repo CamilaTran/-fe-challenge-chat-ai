@@ -6,12 +6,15 @@ import FastIcon from "@/app/ui/icon/fast-icon"
 import HistoryTopics from "../history-topics"
 import Button from "../buttons"
 import BlinkIcon from "@/app/ui/icon/blink-icon"
+import { useChatStore } from "@/store/chatStore"
 
 interface SidebarProps {
     goToSignIn: () => void
 }
 
 const Sidebar = ({ goToSignIn }: SidebarProps) => {
+    const chatList = useChatStore((state)=> state.list)
+
     return <div className="w-60 lg:h-screen px-4 py-6 border-r-1 border-neutral-200">
         <div className="flex flex-col h-full w-full justify-between">
             <div>
@@ -24,7 +27,7 @@ const Sidebar = ({ goToSignIn }: SidebarProps) => {
                 {/* actions  */}
                 <div className="">
                     <SidebarChip title="Ongoing prompt" icon={(color) => <FastIcon color={color} />} onClick={() => { }} />
-                    <HistoryTopics list={['a', 'b', 'c']} />
+                    <HistoryTopics list={chatList} />
 
                 </div>
             </div>

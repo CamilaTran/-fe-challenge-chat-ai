@@ -40,7 +40,7 @@ export default function Home() {
           <div className="lg:block hidden">
             <Sidebar goToSignIn={onOpenAPIModal} />
           </div>
-          <div className="lg:w-[calc(100vw-240px-64px-64px)] mx-auto">
+          <div className="lg:w-[calc(100vw-240px-64px-64px)] mx-auto w-full">
             <ChatContent />
           </div>
         </div>
